@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyen Duy Anh</title>
+    <title>Learning Material</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
         * {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             scroll-behavior: smooth;
         }
 
@@ -18,89 +19,76 @@
             background-color: white;
         }
 
-        /* Fixed Navbar */
+        /* Navbar */
         .navbar {
             position: fixed;
             top: 0;
             width: 100%;
             background-color: white;
             display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 60px;
+            justify-content: center;
+            padding: 15px 0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
+            z-index: 999;
         }
 
         .navbar a {
+            margin: 0 20px;
             text-decoration: none;
             color: black;
             font-weight: bold;
-            padding: 10px 20px;
+            font-size: 16px;
+            transition: color 0.3s ease;
         }
 
         .navbar a.active {
             color: red;
         }
 
-        /* Section styling */
+        /* Section common style */
         section {
-            padding: 100px 20px 50px 20px;
-        }
-
-        #home {
-            background: linear-gradient(90deg, #7f00ff, #e100ff);
-            color: white;
-            text-align: left;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-left: 50px;
+            background-size: cover;
+            background-position: center;
+            padding: 120px 50px 50px 50px;
+            color: white;
         }
 
-        #home h1 {
+        .content {
+            max-width: 40%;
+        }
+
+        .content h1 {
             font-size: 48px;
             margin-bottom: 20px;
         }
 
-        #home h3 {
+        .content h3 {
             font-style: italic;
             margin-bottom: 20px;
+            font-size: 20px;
         }
 
-        #home p {
-            max-width: 700px;
+        .content p {
+            font-size: 16px;
+            line-height: 1.8;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: bold;
-        }
-
-        .poster {
-            color: red;
-        }
-
-        .slide {
-            color: #003366;
-        }
-
-        .video {
-            color: red;
-        }
-
-        .scorm {
-            color: #003366;
+            margin-bottom: 20px;
         }
 
         .section-description {
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
+            font-style: italic;
             color: black;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            font-size: 16px;
+            line-height: 1.6;
         }
 
         .cards {
@@ -114,9 +102,9 @@
             width: 200px;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             background-color: white;
+            text-align: center;
             cursor: pointer;
         }
 
@@ -128,10 +116,14 @@
 
         .card p {
             padding: 10px;
+            color: black;
+            font-weight: bold;
         }
 
         footer {
-            background-color: #333;
+            background-image: url('Link_anh/Background6.png');
+            background-size: cover;
+            background-position: center;
             color: white;
             padding: 30px 20px;
             text-align: center;
@@ -142,15 +134,12 @@
             color: white;
             text-decoration: none;
         }
-
-        footer i {
-            margin-right: 8px;
-        }
     </style>
 </head>
 
 <body>
 
+    <!-- Navbar -->
     <div class="navbar">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#poster" class="nav-link">Poster</a>
@@ -159,122 +148,69 @@
         <a href="#scorm" class="nav-link">Scorm</a>
     </div>
 
-    <!-- Section 1: Home -->
-    <section id="home">
-        <h1>LEARNING MATERIAL</h1>
-        <h3>Truyền cảm hứng qua từng sản phẩm đào tạo</h3>
-        <p>Đây là không gian giới thiệu các sản phẩm học liệu sáng tạo của tôi, nơi kết hợp giữa thiết kế trực quan và tính ứng dụng thực tế. Mỗi sản phẩm không chỉ truyền tải kiến thức mà còn mang lại trải nghiệm học tập thú vị và hiệu quả. Hãy cùng khám phá cách học liệu có thể chạm đến cảm xúc người học.</p>
-    </section>
-
-    <!-- Section 2: Poster -->
-    <section id="poster">
-        <div class="section-title poster">KHƠI NGUỒN HỨNG THÚ, DẪN LỐI KHÁM PHÁ</div>
-        <p class="section-description">
-            Poster/Thư mời là điểm chạm đầu tiên, thu hút người học thông qua hình ảnh sáng tạo và thông điệp cô đọng. Sự kết hợp này khơi gợi tò mò, tạo cảm hứng và mở ra động lực để người học sẵn sàng bước vào hành trình khám phá tri thức.
-        </p>
-        <div class="cards">
-            <div class="card">
-                <img src="./thumbnail.png" alt="Giảng viên nội bộ">
-                <p>Giảng viên nội bộ</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="Hệ thống CRM">
-                <p>Hệ thống CRM</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="Hướng dẫn chuyển tiền">
-                <p>Hướng dẫn chuyển tiền</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="Năng lực đầu tư">
-                <p>Năng lực đầu tư</p>
-            </div>
+    <!-- Section 1 -->
+    <section id="home" style="background-image: url('Link_anh/Background1.png');">
+        <div class="content">
+            <h1>LEARNING MATERIAL</h1>
+            <h3>Truyền cảm hứng qua từng sản phẩm đào tạo</h3>
+            <p>Đây là không gian giới thiệu các sản phẩm học liệu sáng tạo của tôi, nơi kết hợp giữa thiết kế trực quan và tính ứng dụng thực tế. Mỗi sản phẩm không chỉ truyền tải kiến thức mà còn mang lại trải nghiệm học tập thú vị và hiệu quả. Hãy cùng khám phá cách học liệu có thể chạm đến cảm xúc người học.</p>
         </div>
     </section>
 
-    <!-- Section 3: Slide -->
-    <section id="slide">
-        <div class="section-title slide">SẮP XẾP KIẾN THỨC, DẪN DẮT TƯ DUY</div>
-        <p class="section-description">
-            Slide không chỉ đơn thuần là nơi lưu giữ thông tin, mà là công cụ tổ chức, sắp xếp và kết nối kiến thức một cách logic. Slide được thiết kế để dẫn dắt người học từng bước, từ tổng quan đến chi tiết và ngược lại, giúp tiếp thu hiệu quả và ghi nhớ lâu dài.
-        </p>
+    <!-- Section 2 -->
+    <section id="poster" style="background-image: url('Link_anh/Background2.png');">
+        <div class="section-title" style="color: red;">KHƠI NGUỒN HỨNG THÚ, DẪN LỐI KHÁM PHÁ</div>
+        <p class="section-description">Poster/Thư mời là điểm chạm đầu tiên, thu hút người học thông qua hình ảnh sáng tạo và thông điệp cô đọng. Sự kết hợp này khơi gợi tò mò, tạo cảm hứng và mở ra động lực để người học sẵn sàng bước vào hành trình khám phá tri thức.</p>
         <div class="cards">
-            <div class="card">
-                <img src="./thumbnail.png" alt="Tuyệt đỉnh PowerPoint">
-                <p>Tuyệt đỉnh PowerPoint</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="Sản phẩm bảo hiểm">
-                <p>Sản phẩm bảo hiểm</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="Danh mục hồ sơ">
-                <p>Danh mục hồ sơ</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="Bình đẳng giới">
-                <p>Bình đẳng giới</p>
-            </div>
+            <div class="card"><img src="Link_anh/1 (1).png" alt=""><p>Giảng viên nội bộ</p></div>
+            <div class="card"><img src="Link_anh/1 (2).png" alt=""><p>Hệ thống rCRM</p></div>
+            <div class="card"><img src="Link_anh/1 (3).png" alt=""><p>Hướng dẫn chuyển tiền</p></div>
+            <div class="card"><img src="Link_anh/1 (4).png" alt=""><p>Năng lực đầu tư</p></div>
         </div>
     </section>
 
-    <!-- Section 4: Video -->
-    <section id="video">
-        <div class="section-title video">KỂ CHUYỆN SINH ĐỘNG, TRUYỀN TẢI KIẾN THỨC</div>
-        <p class="section-description">
-            Video giúp chuyển hóa những khái niệm phức tạp thành các ví dụ gần gũi, dễ hiểu. Thông qua những khung hình và âm thanh cuốn hút, video mang đến trải nghiệm học tập hấp dẫn, giúp bài học trở nên sống động và dễ tiếp cận.
-        </p>
+    <!-- Section 3 -->
+    <section id="slide" style="background-image: url('Link_anh/Background3.png');">
+        <div class="section-title" style="color: #003366;">SẮP XẾP KIẾN THỨC, DẪN DẮT TƯ DUY</div>
+        <p class="section-description">Slide không chỉ đơn thuần là nơi lưu giữ thông tin, mà là công cụ tổ chức, sắp xếp và kết nối kiến thức một cách logic. Slide được thiết kế để dẫn dắt người học từng bước, từ tổng quan đến chi tiết và ngược lại, giúp tiếp thu hiệu quả và ghi nhớ lâu dài.</p>
         <div class="cards">
-            <div class="card">
-                <img src="./thumbnail.png" alt="Introduction">
-                <p>Introduction</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="Chúc mừng 20-11">
-                <p>Chúc mừng 20-11</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="TTCK Việt Nam">
-                <p>TTCK Việt Nam</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="Hệ thống CRM">
-                <p>Hệ thống CRM</p>
-            </div>
+            <div class="card"><img src="Link_anh/1 (5).png" alt=""><p>Tuyệt đỉnh PowerPoint</p></div>
+            <div class="card"><img src="Link_anh/1 (6).png" alt=""><p>Sản phẩm bảo hiểm</p></div>
+            <div class="card"><img src="Link_anh/1 (7).png" alt=""><p>Danh mục hồ sơ</p></div>
+            <div class="card"><img src="Link_anh/1 (8).png" alt=""><p>Bình đẳng giới</p></div>
         </div>
     </section>
 
-    <!-- Section 5: Scorm -->
-    <section id="scorm">
-        <div class="section-title scorm">TƯƠNG TÁC TRỰC TIẾP, HỌC SÂU NHỚ LÂU</div>
-        <p class="section-description">
-            Scorm cho phép người học chủ động tham gia vào quá trình học thông qua các bài tập, câu hỏi tương tác và phân hồi tức thì. Sự tương tác liên tục giúp người học ôn luyện, kiểm tra và củng cố kiến thức một cách vững chắc, từ đó ghi nhớ lâu và hiểu sâu hơn.
-        </p>
+    <!-- Section 4 -->
+    <section id="video" style="background-image: url('Link_anh/Background4.png');">
+        <div class="section-title" style="color: red;">KỂ CHUYỆN SINH ĐỘNG, TRUYỀN TẢI KIẾN THỨC</div>
+        <p class="section-description">Video giúp chuyển hóa những khái niệm phức tạp thành các ví dụ gần gũi, dễ hiểu. Thông qua những khung hình và âm thanh cuốn hút, video mang đến trải nghiệm học tập hấp dẫn, giúp bài học trở nên sống động và dễ tiếp cận.</p>
         <div class="cards">
-            <div class="card">
-                <img src="./thumbnail.png" alt="7 Pattern phổ biến">
-                <p>7 Pattern phổ biến</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="Who's the Millionaire">
-                <p>Who's the Millionaire</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="Phương pháp CANSLIM">
-                <p>Phương pháp CANSLIM</p>
-            </div>
-            <div class="card">
-                <img src="./thumbnail.png" alt="PTCB + PTKT">
-                <p>PTCB + PTKT</p>
-            </div>
+            <div class="card"><img src="Link_anh/1 (9).png" alt=""><p>Introduction</p></div>
+            <div class="card"><img src="Link_anh/1 (10).png" alt=""><p>Chúc mừng 20-11</p></div>
+            <div class="card"><img src="Link_anh/1 (11).png" alt=""><p>TTCK Việt Nam</p></div>
+            <div class="card"><img src="Link_anh/1 (12).png" alt=""><p>Hệ thống rCRM</p></div>
         </div>
     </section>
 
+    <!-- Section 5 -->
+    <section id="scorm" style="background-image: url('Link_anh/Background5.png');">
+        <div class="section-title" style="color: #003366;">TƯƠNG TÁC TRỰC TIẾP, HỌC SÂU NHỚ LÂU</div>
+        <p class="section-description">Scorm cho phép người học chủ động tham gia vào quá trình học thông qua các bài tập, câu hỏi tương tác và phản hồi tức thì. Sự tương tác liên tục giúp người học ôn luyện, kiểm tra và củng cố kiến thức một cách vững chắc, từ đó ghi nhớ lâu và hiểu sâu hơn.</p>
+        <div class="cards">
+            <div class="card"><img src="Link_anh/1 (13).png" alt=""><p>7 Pattern phổ biến</p></div>
+            <div class="card"><img src="Link_anh/1 (14).png" alt=""><p>Who's the Millionaire</p></div>
+            <div class="card"><img src="Link_anh/1 (15).png" alt=""><p>Phương pháp CANSLIM</p></div>
+            <div class="card"><img src="Link_anh/1 (16).png" alt=""><p>PTCB + PTKT</p></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p><i class="fas fa-user"></i>Mr. Nguyễn Duy Anh</p>
-        <p><i class="fas fa-phone"></i>0972 173 972</p>
-        <p><i class="fas fa-envelope"></i>anhnd.design@gmail.com</p>
-        <p><i class="fas fa-globe"></i><a href="https://anhnd-design.github.io/anhnd/" target="_blank">https://anhnd-design.github.io/anhnd/</a></p>
+        <p>Mr. Nguyễn Duy Anh</p>
+        <p>0972 173 972</p>
+        <p>anhnd.design@gmail.com</p>
+        <p><a href="https://anhnd-design.github.io/anhnd/" target="_blank">https://anhnd-design.github.io/anhnd/</a></p>
     </footer>
 
     <script>
@@ -288,7 +224,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>
-
