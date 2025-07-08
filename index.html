@@ -213,7 +213,7 @@
   =========================== -->
 <section id="home" style="background-image: url('Link_anh/Background1.png');">
   <style>
-    /* Giao diện toàn bộ khối home */
+    /* Khối tổng Home */
     #home {
         padding: 0;
         min-height: 100vh;
@@ -222,27 +222,16 @@
         color: white;
     }
 
-    /* Khung bọc toàn bộ phần nội dung + ảnh */
+    /* Flex container bọc nội dung và ảnh */
     .home-container {
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
-        padding: 250px 50px 50px 70px;  /* Trên - Phải - Dưới - Trái */
-        flex-wrap: wrap;               /* Đảm bảo xuống dòng khi màn hình hẹp */
+        align-items: center;
+        padding: 250px 50px 50px 70px;
+        flex-wrap: wrap;
     }
 
-    /* Cột ảnh bên trái */
-    .deco-container {
-        flex: 0 0 auto;
-        margin-right: 30px;
-    }
-
-    .decor {
-        max-width: 3000px;
-        height: auto;
-    }
-
-    /* Cột chữ bên phải */
+    /* Cột chữ bên trái */
     .content {
         max-width: 600px;
     }
@@ -263,33 +252,44 @@
         line-height: 1.8;
     }
 
-    /* Responsive trên điện thoại */
+    /* Cột ảnh bên phải */
+    .deco-container {
+        flex: 0 0 auto;
+        margin-left: 30px;
+    }
+
+    .decor {
+        max-width: 300px; /* 👈 Tăng kích thước ảnh */
+        height: auto;
+    }
+
+    /* Responsive cho màn hình nhỏ */
     @media (max-width: 768px) {
         .home-container {
             flex-direction: column;
             align-items: center;
             text-align: center;
+            padding: 180px 20px 40px 20px;
         }
 
         .deco-container {
-            margin-right: 0;
-            margin-bottom: 20px;
+            margin-left: 0;
+            margin-top: 30px;
         }
 
         .content {
             max-width: 90%;
+        }
+
+        .decor {
+            max-width: 80%;
         }
     }
   </style>
 
   <div class="home-container">
 
-    <!-- Ảnh bên trái -->
-    <div class="deco-container">
-      <img src="Link_anh/deco.png" alt="Decorative" class="decor">
-    </div>
-
-    <!-- Nội dung chữ bên phải -->
+    <!-- Nội dung chữ bên trái -->
     <div class="content">
       <h1>LEARNING MATERIAL</h1>
       <h3>Truyền cảm hứng qua từng sản phẩm đào tạo</h3>
@@ -298,9 +298,13 @@
       </p>
     </div>
 
+    <!-- Ảnh bên phải -->
+    <div class="deco-container">
+      <img src="Link_anh/deco.png" alt="Decorative" class="decor">
+    </div>
+
   </div>
 </section>
-
 
   <!-- ==========================
        SECTION 2: POSTER
