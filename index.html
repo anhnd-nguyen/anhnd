@@ -212,9 +212,84 @@
        SECTION 1: HOME
   =========================== -->
 <section id="home" style="background-image: url('Link_anh/Background1.png');">
-  <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-top: 250px; padding-left: 70px; padding-right: 50px;">
-    
-    <!-- Phần nội dung chữ -->
+  <style>
+    /* Giao diện toàn bộ khối home */
+    #home {
+        padding: 0;
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    /* Khung bọc toàn bộ phần nội dung + ảnh */
+    .home-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 250px 50px 50px 70px;  /* Trên - Phải - Dưới - Trái */
+        flex-wrap: wrap;               /* Đảm bảo xuống dòng khi màn hình hẹp */
+    }
+
+    /* Cột ảnh bên trái */
+    .deco-container {
+        flex: 0 0 auto;
+        margin-right: 30px;
+    }
+
+    .decor {
+        max-width: 150px;
+        height: auto;
+    }
+
+    /* Cột chữ bên phải */
+    .content {
+        max-width: 600px;
+    }
+
+    .content h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .content h3 {
+        font-style: italic;
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+    .content p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    /* Responsive trên điện thoại */
+    @media (max-width: 768px) {
+        .home-container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .deco-container {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            max-width: 90%;
+        }
+    }
+  </style>
+
+  <div class="home-container">
+
+    <!-- Ảnh bên trái -->
+    <div class="deco-container">
+      <img src="Link_anh/deco.png" alt="Decorative" class="decor">
+    </div>
+
+    <!-- Nội dung chữ bên phải -->
     <div class="content">
       <h1>LEARNING MATERIAL</h1>
       <h3>Truyền cảm hứng qua từng sản phẩm đào tạo</h3>
@@ -223,30 +298,9 @@
       </p>
     </div>
 
-    <!-- Phần ảnh deco -->
-    <img src="Link_anh/deco.png" alt="Decorative" style="max-width: 150px; height: auto;">
-      <style>
-        .deco-container {
-            position: relative;
-            display: flex;
-            justify-content: flex-end;
-            padding-top: 50px;
-            padding-right: 50px;
-        }
-.decor {
-    width: 40%;       /* Ảnh chiếm 40% chiều ngang khung chứa */
-    height: auto;
-}
-    </style>
   </div>
 </section>
 
-
-      <h1>LEARNING MATERIAL</h1>
-      <h3>Truyền cảm hứng qua từng sản phẩm đào tạo</h3>
-      <p> Đây là không gian giới thiệu các sản phẩm học liệu sáng tạo của tôi, nơi kết hợp giữa thiết kế trực quan và tính ứng dụng thực tế. Mỗi sản phẩm không chỉ truyền tải kiến thức mà còn mang lại trải nghiệm học tập thú vị và hiệu quả. Hãy cùng khám phá cách học liệu có thể chạm đến cảm xúc người học.</p>
-    </div>
-  </section>
 
   <!-- ==========================
        SECTION 2: POSTER
