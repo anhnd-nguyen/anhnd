@@ -212,6 +212,24 @@
        SECTION 1: HOME
   =========================== -->
   <section id="home" style="background-image: url('Link_anh/Background1.png');">
+      <div class="deco-container">
+        <img src="Link_anh/deco.png" alt="Decor" class="decor">
+    </div>
+    /* Container giúp kiểm soát vị trí của ảnh decor */
+.deco-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 270px;
+    padding-right: 50px;
+}
+
+/* Ảnh decor co giãn phù hợp */
+.decor {
+    max-width: 300px;
+    height: auto;
+}
+
     <div class="content">
       <h1>LEARNING MATERIAL</h1>
       <h3>Truyền cảm hứng qua từng sản phẩm đào tạo</h3>
