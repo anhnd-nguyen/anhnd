@@ -1,193 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyen Duy Anh</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <style>
-        /* ------------------------ GLOBAL STYLES ------------------------ */
-        * {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nguyen Duy Anh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+  <style>
+    /* === RESET + FONT === */
+    * {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        body {
-            background-color: white;
-        }
+    body {
+      background-color: white;
+    }
 
-        /* ------------------------ NAVIGATION BAR ------------------------ */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Cho phép wrap khi màn hình nhỏ */
-            padding: 15px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
+    /* === NAVIGATION BAR === */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+    }
 
-        .navbar a {
-            margin: 10px 20px;
-            text-decoration: none;
-            color: gray;
-            font-weight: bold;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
+    .navbar a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: gray;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
 
-        .navbar a.active {
-            color: red;
-        }
+    .navbar a.active {
+      color: red;
+    }
 
-        /* ------------------------ SECTION PADDING CUSTOMIZATION ------------------------ */
-        section {
-            min-height: 100vh;
-            background-size: cover;
-            background-position: center;
-            color: white;
-        }
+    /* === SECTION CƠ BẢN === */
+    section {
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 150px 50px 50px 70px; /* mặc định cho các section trừ home */
+    }
 
-        #home {
-            padding: 250px 50px 50px 70px;
-        }
+    /* Padding riêng cho Home */
+    #home {
+      padding-top: 250px;
+    }
 
-        #poster,
-        #slide,
-        #video,
-        #scorm {
-            padding: 150px 50px 50px 70px;
-        }
+    /* === TEXT KHUNG HOME === */
+    .content {
+      max-width: 40%;
+    }
 
-        /* ------------------------ SECTION CONTENT ------------------------ */
-        .content {
-            max-width: 40%;
-        }
+    .content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
 
-        .content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
+    .content h3 {
+      font-style: italic;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
 
-        .content h3 {
-            font-style: italic;
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
+    .content p {
+      font-size: 16px;
+      line-height: 1.8;
+    }
 
-        .content p {
-            font-size: 16px;
-            line-height: 1.8;
-        }
+    /* === TIÊU ĐỀ VÀ MÔ TẢ CHUNG CỦA CÁC SECTION === */
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 50px;
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 50px;
-        }
+    .section-description {
+      text-align: center;
+      font-style: italic;
+      color: black;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      font-size: 16px;
+      line-height: 1.6;
+    }
 
-        .section-description {
-            text-align: center;
-            font-style: italic;
-            color: black;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            font-size: 16px;
-            line-height: 1.6;
-        }
+    /* === KHUNG HIỂN THỊ CÁC THUMBNAIL === */
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-        /* ------------------------ CARD CONTAINER ------------------------ */
-        .cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    .card {
+      width: 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      background-color: white;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none; /* bỏ gạch chân */
+      color: inherit;
+    }
 
-        /* ------------------------ INDIVIDUAL CARD ------------------------ */
-        .card {
-            width: 300px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            background-color: white;
-            text-align: center;
-            cursor: pointer;
-            text-decoration: none; /* Bỏ gạch chân */
-            color: inherit; /* Giữ màu chữ gốc */
-        }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
 
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
+    .card p {
+      padding: 10px;
+      color: gray;
+      font-weight: bold;
+    }
 
-        .card p {
-            padding: 10px;
-            color: gray;
-            font-weight: bold;
-        }
+    /* === PHẦN CHÂN TRANG === */
+    footer {
+      background-image: url('Link_anh/Background6.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      line-height: 1.8;
+    }
 
-        /* ------------------------ FOOTER ------------------------ */
-        footer {
-            background-image: url('Link_anh/Background6.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-            line-height: 1.8;
-        }
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
 
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
+    /* === RESPONSIVE CHO MOBILE === */
+    @media (max-width: 768px) {
+      .navbar a {
+        margin: 8px;
+        font-size: 14px;
+      }
 
-        /* ------------------------ RESPONSIVE FIX ------------------------ */
-        @media screen and (max-width: 768px) {
-            .navbar a {
-                margin: 10px 10px;
-                font-size: 14px;
-            }
+      .content {
+        max-width: 90%;
+        margin: auto;
+        text-align: center;
+      }
 
-            .content {
-                max-width: 100%;
-                padding-right: 20px;
-            }
+      .section-description {
+        padding: 0 10px;
+      }
 
-            .card {
-                width: 90%;
-                margin: 0 auto;
-            }
-        }
-    </style>
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- TO DO: Dán các phần HTML nội dung vào đây như bạn đã có -->
-    <!-- Navbar, Sections, Footer, Scripts v.v. -->
+  <!-- === NAVIGATION MENU === -->
+  <div class="navbar">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#poster" class="nav-link">Poster</a>
+    <a href="#slide" class="nav-link">Slide</a>
+    <a href="#video" class="nav-link">Video</a>
+    <a href="#scorm" class="nav-link">Scorm</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
 
-    <script>
-        // Highlight active tab on click
-        const navLinks = document.querySelectorAll('.nav-link');
+  <!-- === SECTION 1: HOME === -->
+  <section id="home" style="background-image: url('Link_anh/Background1.png');">
+    <div class="content">
+      <h1>LEARNING MATERIAL</h1>
+      <h3>Truyền cảm hứng qua từng sản phẩm đào tạo</h3>
+      <p>Đây là không gian giới thiệu các sản phẩm học liệu sáng tạo của tôi, nơi kết hợp giữa thiết kế trực quan và tính ứng dụng thực tế...</p>
+    </div>
+  </section>
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                navLinks.forEach(nav => nav.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    </script>
+  <!-- === SECTION 2: POSTER === -->
+  <section id="poster" style="background-image: url('Link_anh/Background2.png');">
+    <div class="section-title" style="color: red;">KHƠI NGUỒN HỨNG THÚ, DẪN LỐI KHÁM PHÁ</div>
+    <p class="section-description">Poster/Thư mời là điểm chạm đầu tiên...</p>
+    <div class="cards">
+      <a href="01. Poster/01_Nang_cao_nang_luc_Giang_vien_noi_bo.png" target="_blank" class="card">
+        <img src="01. Poster/01_Nang_cao_nang_luc_Giang_vien_noi_bo.png" alt="Giảng viên nội bộ" />
+        <p>Giảng viên nội bộ</p>
+      </a>
+      <a href="01. Poster/02_rCRM.png" target="_blank" class="card">
+        <img src="01. Poster/02_rCRM.png" alt="rCRM" />
+        <p>Hệ thống rCRM</p>
+      </a>
+      <!-- Thêm các thẻ <a class="card"> khác tại đây -->
+    </div>
+  </section>
+
+  <!-- === SECTION 3: SLIDE === -->
+  <section id="slide" style="background-image: url('Link_anh/Background3.png');">
+    <div class="section-title" style="color: #003366;">SẮP XẾP KIẾN THỨC, DẪN DẮT TƯ DUY</div>
+    <p class="section-description">Slide không chỉ đơn thuần là nơi lưu giữ thông tin...</p>
+    <div class="cards">
+      <a href="02. Slide/01_Tuyet_dinh_Powerpoint.pdf" target="_blank" class="card">
+        <img src="Link_anh/Thumbnail slide 1.jpg" alt="" />
+        <p>Tuyệt đỉnh PowerPoint</p>
+      </a>
+      <!-- Thêm các thẻ <a class="card"> khác tại đây -->
+    </div>
+  </section>
+
+  <!-- === SECTION 4: VIDEO === -->
+  <section id="video" style="background-image: url('Link_anh/Background4.png');">
+    <div class="section-title" style="color: red;">KỂ CHUYỆN SINH ĐỘNG, TRUYỀN TẢI KIẾN THỨC</div>
+    <p class="section-description">Video giúp chuyển hóa những khái niệm phức tạp...</p>
+    <div class="cards">
+      <a href="https://drive.google.com/file/d/.../view" target="_blank" class="card">
+        <img src="Link_anh/Thumbnail video 1.jpg" alt="Video Intro" />
+        <p>Introduction</p>
+      </a>
+      <!-- Thêm các thẻ <a class="card"> khác tại đây -->
+    </div>
+  </section>
+
+  <!-- === SECTION 5: SCORM === -->
+  <section id="scorm" style="background-image: url('Link_anh/Background5.png');">
+    <div class="section-title" style="color: #003366;">TƯƠNG TÁC TRỰC TIẾP, HỌC SÂU NHỚ LÂU</div>
+    <p class="section-description">Scorm cho phép người học chủ động tham gia vào quá trình học...</p>
+    <div class="cards">
+      <a href="https://anhnd7pattern.netlify.app/" target="_blank" class="card">
+        <img src="Link_anh/Thumbnail scorm 1.jpg" alt="Scorm 1" />
+        <p>7 Pattern phổ biến</p>
+      </a>
+      <!-- Thêm các thẻ <a class="card"> khác tại đây -->
+    </div>
+  </section>
+
+  <!-- === SECTION 6: CONTACT === -->
+  <section id="contact" style="background-image: url('Link_anh/Background6.png');">
+    <div class="section-title">LIÊN HỆ</div>
+    <p class="section-description">
+      Mr. Nguyễn Duy Anh<br />
+      0972 173 972<br />
+      anhnd.design@gmail.com<br />
+      <a href="https://anhnd-design.github.io/anhnd/" target="_blank">https://anhnd-design.github.io/anhnd/</a>
+    </p>
+  </section>
+
+  <!-- === ACTIVE TAB SCRIPT === -->
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(nav => nav.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
 </body>
-
 </html>
