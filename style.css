@@ -341,26 +341,3 @@ margin-bottom: 50px;   /* Tạo khoảng cách phía dưới phần tử */}
 }
 
 
-/* ===========================
-   CẤU HÌNH BACKGROUND CHUNG
-=========================== */
-.main-container {
-    background-image: url('Link_anh/Background2.png');
-    background-repeat: no-repeat;
-    background-size: cover;       /* Phủ kín vùng chứa */
-    background-position: center;  /* Căn giữa ảnh */
-    background-attachment: fixed; /* Giữ ảnh đứng yên khi cuộn */
-    width: 100%;
-    display: block;               /* Đảm bảo nó là khối bao quanh */
-    overflow: hidden;             /* Tránh lỗi tràn lề */
-}
-
-/* Xóa bỏ nền và điều chỉnh lại các section con bên trong */
-.main-container section {
-    background: transparent !important; /* Buộc phải trong suốt để thấy nền chung */
-    min-height: auto !important;        /* Để nội dung tự co dãn, không bắt buộc 100vh mỗi phần */
-    padding: 80px 50px;                 /* Tạo khoảng cách trên dưới cho thoáng */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
