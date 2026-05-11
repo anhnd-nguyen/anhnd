@@ -26,7 +26,7 @@ body {
 /* Mỗi section khi cuộn tới sẽ lùi xuống để không bị che tiêu đề */
 section {
   scroll-margin-top: 0px;
-  min-height: 100vh;
+  min-height: auto;
   #poster,
   #slide,
   #video,
@@ -40,7 +40,7 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 150px 50px 50px 70px;
+  padding: 100px 50px 60px 70px;
 }
 
 
