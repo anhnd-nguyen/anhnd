@@ -216,24 +216,6 @@ margin-bottom: 50px;   /* Tạo khoảng cách phía dưới phần tử */}
   }
 }
 /* ===========================
-
-
-.main-container {
-    background-image: url('Link_anh/Background2.png');
-    background-repeat: no-repeat;
-    background-size: cover;       /* Quan trọng: Để ảnh luôn phủ kín bề ngang/dọc */
-    background-position: center;  /* Căn giữa ảnh */
-    background-attachment: fixed; /* Quan trọng: Giữ ảnh đứng yên khi cuộn nội dung */
-    width: 100%;
-    min-height: 100vh;            /* Đảm bảo chiều cao ít nhất bằng màn hình */
-}
-
-/* Quan trọng: Xóa bỏ nền của các section con để lộ nền chung ra */
-.main-container section {
-    background: transparent !important;
-    padding: 50px 0; /* Khoảng cách giữa các phần cho thoáng */
-}
-
    CARD & LƯỚI HIỂN THỊ
 =========================== */
 .cards {
@@ -341,3 +323,25 @@ margin-bottom: 50px;   /* Tạo khoảng cách phía dưới phần tử */}
 }
 
 
+/* Dán đoạn này xuống cuối cùng file style.css */
+
+.main-container {
+    background-image: url('Link_anh/Background2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    display: block; 
+    clear: both; /* Đảm bảo không bị ảnh hưởng bởi các phần tử trôi (float) */
+}
+
+.main-container section {
+    background: transparent !important;
+    min-height: auto !important; /* Quan trọng: Để nội dung không bị ép chiều cao 100vh */
+    padding: 100px 70px !important; /* Giữ khoảng cách lề trái/phải như cũ của bạn */
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center; /* Căn nội dung vào giữa lại */
+}
