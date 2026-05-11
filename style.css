@@ -1,0 +1,323 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===========================
+   RESET & FONT TOÀN TRANG
+=========================== */
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+}
+
+/* ===========================
+   CẤU HÌNH CHUNG
+=========================== */
+:root {
+  --navbar-height: 100px; /* Chiều cao thanh menu để offset cuộn */
+}
+
+/* Mỗi section khi cuộn tới sẽ lùi xuống để không bị che tiêu đề */
+section {
+  scroll-margin-top: 0px;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 150px 50px 50px 70px;
+}
+
+
+#home {
+  padding: 200px 50px 50px 70px; /* Section HOME có padding-top nhiều hơn */
+}
+
+/* ===========================
+   NAVBAR (THANH MENU)
+=========================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 80px;
+  width: 100%;
+}
+
+.nav-link {
+  margin: 0 30px;
+  text-decoration: none;
+  color: gray;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: red;
+}
+
+/* Responsive cho NAVBAR trên Mobile */
+@media (max-width: 480px) {
+  .nav-inner {
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 2px;
+    padding: 0 6px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    padding: 2px 3px;
+    margin: 0 2px;
+    flex-shrink: 1;
+  }
+}
+
+/* ===========================
+   PHẦN GIỚI THIỆU (HOME)
+=========================== */
+.home-container {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.content {
+  max-width: 600px;
+}
+
+.content h1 {
+  font-size: 48px;
+  margin: 0 0 20px 20px;
+}
+
+.content h3 {
+  font-style: italic;
+  font-size: 20px;
+  margin: 0 0 20px 20px;
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-left: 20px;
+}
+
+.deco-container {
+  flex: 0 0 auto;
+  margin-right: 30px;
+}
+
+.decor {
+  max-width: 500px;
+  height: auto;
+}
+
+/* Responsive cho HOME */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .deco-container {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .content {
+    max-width: 95%;
+  }
+
+  .content h1,
+  .content h3,
+  .content p {
+    margin: 10px auto;
+    max-width: 95vw;
+    text-align: center;
+  }
+
+  .content p {
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 0 5px;
+  }
+
+  .decor {
+    max-width: 80%;
+  }
+}
+/* ===========================
+   TIÊU ĐỀ & MÔ TẢ SECTION
+=========================== */
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+margin-top: 0px;     /* Tạo khoảng cách phía trên phần tử */
+margin-bottom: 50px;   /* Tạo khoảng cách phía dưới phần tử */}
+
+.section-description {
+  text-align: center;
+  font-style: italic;
+  color: black;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 20px;
+    margin: 0 auto 30px auto;
+    max-width: 95vw; /* 👈 cho phép chiếm gần hết chiều ngang màn hình */
+    line-height: 1.6;
+  }
+  .section-description {
+    font-size: 16px;
+  max-width: 95vw;
+    padding: 0 5px;
+  }
+}
+.mobile-break {
+  display: inline;
+}
+
+@media (max-width: 480px) {
+  .mobile-break {
+    display: block;
+  }
+}
+/* ===========================
+   CARD & LƯỚI HIỂN THỊ
+=========================== */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 10px;
+  color: gray;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90vw;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .card img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+  }
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer {
+  background-image: url('Link_anh/Background6.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 35px;
+}
+
+.contact-content {
+  padding-left: 0;
+}
+
+.contact-content h3 {
+  margin: 8px 0 12px 0;
+  font-size: 18px;
+}
+
+.contact-content p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.contact-content i {
+  margin-right: 10px;
+}
+
+@media (max-width: 480px) {
+  .contact-content {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .contact-content p i {
+    margin-right: 6px;
+  }
+
+  .footer h3 {
+    font-size: 15px;
+  }
+}
