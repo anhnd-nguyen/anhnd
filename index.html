@@ -2,437 +2,171 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
   <title>Nguyen Duy Anh</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
-  <style>
-    /* ==========================
-       RESET + FONT TOÀN TRANG
-    =========================== */
-    * {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
 
-    body {
-      background-color: white;
-    }
+  <!-- Font Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
-    /* ==========================
-       THANH MENU (NAVBAR)
-    =========================== */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: white;
-      display: flex;
-      flex-wrap: wrap;  /* ✅ Cho phép wrap khi màn hình nhỏ */
-      justify-content: center;
-      padding: 15px 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      z-index: 999;
-    }
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    .navbar a {
-      margin: 0 20px;
-      text-decoration: none;
-      color: gray;
-      font-weight: bold;
-      font-size: 16px;
-      transition: color 0.3s ease;
-    }
-
-    .navbar a.active {
-      color: red;
-    }
-
-    /* ==========================
-       CÀI ĐẶT CHUNG CHO SECTION
-    =========================== */
-    section {
-      min-height: 100vh;
-      background-size: cover;
-      background-position: center;
-      color: white;
-    }
-
-    /* SECTION 1: HOME – Padding trên 250px */
-    #home {
-      padding: 250px 50px 50px 70px;
-    }
-
-    /* Các SECTION còn lại – Padding trên 150px */
-    #poster, #slide, #video, #scorm {
-      padding: 150px 50px 50px 70px;
-    }
-
-    /* ==========================
-       KHUNG CHỨA TEXT GIỚI THIỆU
-    =========================== */
-    .content {
-      max-width: 40%;
-    }
-
-    .content h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    .content h3 {
-      font-style: italic;
-      margin-bottom: 20px;
-      font-size: 20px;
-    }
-
-    .content p {
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    /* ==========================
-       TIÊU ĐỀ & MÔ TẢ MỖI PHẦN
-    =========================== */
-    .section-title {
-      text-align: center;
-      font-size: 36px;
-      font-weight: bold;
-      margin-bottom: 50px;
-    }
-
-    .section-description {
-      text-align: center;
-      font-style: italic;
-      color: black;
-      max-width: 800px;
-      margin: 0 auto 40px auto;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    /* ==========================
-       KHUNG HIỂN THỊ CÁC CARD
-    =========================== */
-    .cards {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .card {
-      width: 300px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      background-color: white;
-      text-align: center;
-      cursor: pointer;
-      text-decoration: none; /* ✅ Bỏ gạch chân */
-      color: inherit;         /* ✅ Giữ nguyên màu chữ */
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .card p {
-      padding: 10px;
-      color: gray;
-      font-weight: bold;
-    }
-
-    /* ==========================
-       FOOTER
-    =========================== */
-    footer {
-      background-image: url('Link_anh/Background6.png');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-      line-height: 1.8;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-    }
-
-    /* ==========================
-       RESPONSIVE CHO MOBILE
-    =========================== */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .navbar a {
-        margin: 8px 12px;
-        font-size: 14px;
-      }
-
-      .content {
-        max-width: 90%;
-        margin: auto;
-        text-align: center;
-      }
-
-      .section-description {
-        padding: 0 10px;
-      }
-
-      .card {
-        width: 90%;
-      }
-    }
-  </style>
+  <!-- CSS riêng -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
+
+
 <body>
-  <!-- ==========================
-       MENU ĐIỀU HƯỚNG
-  =========================== -->
+
+  <!-- NAVBAR -->
   <div class="navbar">
-    <a href="#home" class="nav-link active">Home</a>
-    <a href="#poster" class="nav-link">Poster</a>
-    <a href="#slide" class="nav-link">Slide</a>
-    <a href="#video" class="nav-link">Video</a>
-    <a href="#scorm" class="nav-link">Scorm</a>
+    <div class="nav-inner">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#poster" class="nav-link">Poster</a>
+      <a href="#slide" class="nav-link">Slide</a>
+      <a href="#video" class="nav-link">Video</a>
+      <a href="#scorm" class="nav-link">SCORM</a>
+    </div>
   </div>
 
-  <!-- ==========================
-       SECTION 1: HOME
-  =========================== -->
-<section id="home" style="background-image: url('Link_anh/Background1.png');">
-  <style>
-    /* Khối tổng Home */
-    #home {
-        padding: 0;
-        min-height: 100vh;
-        background-size: cover;
-        background-position: center;
-        color: white;
-    }
-
-    /* Flex container bọc nội dung và ảnh */
-    .home-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 250px 50px 50px 70px;
-        flex-wrap: wrap;
-    }
-
-    /* Cột chữ bên trái */
-    .content {
-        max-width: 600px;
-    }
-
-    .content h1 {
-        font-size: 48px;
-        margin-left: 20px;
-        margin-bottom: 20px;
-    }
-
-    .content h3 {
-        font-style: italic;
-        margin-left: 20px;
-        margin-bottom: 20px;
-        font-size: 20px;
-    }
-
-    .content p {
-        font-size: 16px;
-        margin-left: 20px;
-        line-height: 1.8;
-    }
-
-    /* Cột ảnh bên phải */
-    .deco-container {
-        flex: 0 0 auto;
-        margin-right: 30px;
-    }
-
-    .decor {
-        max-width: 500px; /* 👈 Tăng kích thước ảnh */
-        height: auto;
-    }
-
-    /* Responsive cho màn hình nhỏ */
-    @media (max-width: 768px) {
-        .home-container {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 180px 20px 40px 20px;
-        }
-
-        .deco-container {
-            margin-left: 0;
-            margin-top: 30px;
-        }
-
-        .content {
-            max-width: 90%;
-        }
-
-        .decor {
-            max-width: 80%;
-        }
-    }
-  </style>
-
-  <div class="home-container">
-
-    <!-- Nội dung chữ bên trái -->
-    <div class="content">
-      <h1>LEARNING MATERIAL</h1>
-      <h3>Truyền cảm hứng qua từng sản phẩm đào tạo</h3>
-      <p>
-        Đây là không gian giới thiệu các sản phẩm học liệu sáng tạo của tôi, nơi kết hợp giữa thiết kế trực quan và tính ứng dụng thực tế. Mỗi sản phẩm không chỉ truyền tải kiến thức mà còn mang lại trải nghiệm học tập thú vị và hiệu quả. Hãy cùng khám phá cách học liệu có thể chạm đến cảm xúc người học.
-      </p>
+  <!-- SECTION: HOME -->
+  <section id="home" style="background-image: url('Link_anh/Background1.png');">
+    <div class="home-container">
+      <div class="content">
+        <h1>Learning Materials</h1>
+        <h3>Truyền cảm hứng qua từng sản phẩm đào tạo</h3>
+        <p>Đây là không gian giới thiệu các sản phẩm học liệu sáng tạo 100% bởi tôi - anhnd, nơi kết hợp giữa thiết kế trực quan và tính ứng dụng thực tế. Mỗi sản phẩm không chỉ truyền tải kiến thức mà còn mang lại trải nghiệm học tập thú vị và hiệu quả. Hãy cùng khám phá cách học liệu có thể chạm đến cảm xúc người học.</p>
+      </div>
+      <div class="deco-container">
+        <img src="Link_anh/deco.png" alt="Decorative" class="decor" />
+      </div>
     </div>
+  </section>
 
-    <!-- Ảnh bên phải -->
-    <div class="deco-container">
-      <img src="Link_anh/deco.png" alt="Decorative" class="decor">
-    </div>
-
-  </div>
-</section>
-
-  <!-- ==========================
-       SECTION 2: POSTER
-  =========================== -->
+  <!-- SECTION: POSTER -->
   <section id="poster" style="background-image: url('Link_anh/Background2.png');">
-    <div class="section-title" style="color: red;">KHƠI NGUỒN HỨNG THÚ, DẪN LỐI KHÁM PHÁ</div>
-    <p class="section-description"> Poster/Thư mời là điểm chạm đầu tiên, thu hút người học thông qua hình ảnh sáng tạo và thông điệp cô đọng. Sự kết hợp này khơi gợi tò mò, tạo cảm hứng và mở ra động lực để người học sẵn sàng bước vào hành trình khám phá tri thức.</p>
-        <div class="cards">
+    <div class="section-content">
+      <div class="section-title" style="color: red;">KHƠI NGUỒN HỨNG THÚ, <span class="mobile-break">DẪN LỐI KHÁM PHÁ</span>
+</div>
+      <p class="section-description">Poster/Thư mời là điểm chạm đầu tiên, thu hút người học thông qua hình ảnh sáng tạo và thông điệp cô đọng. Sự kết hợp này khơi gợi tò mò, tạo cảm hứng và mở ra động lực để người học sẵn sàng bước vào hành trình khám phá tri thức.</p>
+      <div class="cards">
+        <a href="01. Poster/01_AI_Voice_Master_360.png" target="_blank" class="card">
+          <img src="01. Poster/01_AI_Voice_Master_360_thumbnail.png" alt="Ảnh" />
+          <p>AI Voice Master 360</p>
+        </a>
+        <a href="01. Poster/02_rCRM.png" target="_blank" class="card">
+          <img src="01. Poster/02_rCRM.png" alt="Ảnh" />
+          <p>Hệ thống rCRM</p>
+        </a>
+        <a href="01. Poster/03_Sau_nang_hang_la_gi.png" target="_blank" class="card">
+          <img src="01. Poster/03_Sau_nang_hang_la_gi.png" alt="Ảnh" />
+          <p>Sau nâng hạng là gì</p>
+        </a>
+        <a href="01. Poster/04_Nang_cao_nang_luc_dau_tu.png" target="_blank" class="card">
+          <img src="01. Poster/04_Nang_cao_nang_luc_dau_tu.png" alt="Ảnh" />
+          <p>Năng lực đầu tư</p>
+        </a>
+      </div>
+    </div>
+  </section>
 
-
-<a href="01. Poster/01_Nang_cao_nang_luc_Giang_vien_noi_bo.png" target="_blank" class="card">
-    <img src="01. Poster/01_Nang_cao_nang_luc_Giang_vien_noi_bo.png" alt="Ảnh">
-    <p>Giảng viên nội bộ</p>
-</a>
-<a href="01. Poster/02_rCRM.png" target="_blank" class="card">
-    <img src="01. Poster/02_rCRM.png" alt="Ảnh">
-    <p>Hệ thống rCRM</p>
-</a>            
-<a href="01. Poster/03_Huong_dan_chuyen_tien.png" target="_blank" class="card">
-    <img src="01. Poster/03_Huong_dan_chuyen_tien.png" alt="Ảnh">
-    <p>Hướng dẫn chuyển tiền</p>
-</a>    
-<a href="01. Poster/04_Nang_cao_nang_luc_dau_tu.png" target="_blank" class="card">
-    <img src="01. Poster/04_Nang_cao_nang_luc_dau_tu.png" alt="Ảnh">
-    <p>Năng lực đầu tư</p>
-</a>               
-    </div>  
-</section>
-
-  <!-- ==========================
-       SECTION 3: SLIDE
-  =========================== -->
+  <!-- SECTION: SLIDE -->
   <section id="slide" style="background-image: url('Link_anh/Background3.png');">
-    <div class="section-title" style="color: #003366;">SẮP XẾP KIẾN THỨC, DẪN DẮT TƯ DUY</div>
-    <p class="section-description"> Slide không chỉ đơn thuần là nơi lưu giữ thông tin, mà là công cụ tổ chức, sắp xếp và kết nối kiến thức một cách logic. Slide được thiết kế để dẫn dắt người học từng bước, từ tổng quan đến chi tiết và ngược lại, giúp tiếp thu hiệu quả và ghi nhớ lâu dài.</p>
-        <div class="cards">
-    
-<a href="02. Slide/01_Tuyet_dinh_Powerpoint.pdf" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail slide 1.jpg" alt="Ảnh">
-    <p>Tuyệt đỉnh Powerpoint</p>
-</a>             
-<a href="02. Slide/02_San_pham_bao_hiem.pdf" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail slide 2.jpg" alt="Ảnh">
-    <p>Sản phẩm bảo hiểm</p>
-</a> 
-<a href="02. Slide/03_Danh_muc_ho_so.pdf" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail slide 3.jpg" alt="Ảnh">
-    <p>Danh mục hồ sơ</p>
-</a>             
-<a href="02. Slide/04_Binh_dang_gioi.pdf" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail slide 4.jpg" alt="Ảnh">
-    <p>Bình đẳng giới</p>
-</a>  
+    <div class="section-content">
+      <div class="section-title" style="color: red;">SẮP XẾP KIẾN THỨC, <span class="mobile-break">DẪN DẮT TƯ DUY</span>
+</div>
+
+      <p class="section-description">Slide không chỉ đơn thuần là nơi lưu giữ thông tin, mà là công cụ tổ chức, sắp xếp và kết nối kiến thức một cách logic. Slide được thiết kế để dẫn dắt người học từng bước, từ tổng quan đến chi tiết và ngược lại, giúp tiếp thu hiệu quả và ghi nhớ lâu dài.</p>
+      <div class="cards">
+        <a href="02. Slide/01_Tuyet_dinh_Powerpoint.pdf" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail slide 1.jpg" alt="Ảnh" />
+          <p>Tuyệt đỉnh Powerpoint</p>
+        </a>
+        <a href="02. Slide/02_San_pham_bao_hiem.pdf" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail slide 2.jpg" alt="Ảnh" />
+          <p>Sản phẩm bảo hiểm</p>
+        </a>
+        <a href="02. Slide/03_Danh_muc_ho_so.pdf" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail slide 3.jpg" alt="Ảnh" />
+          <p>Danh mục hồ sơ</p>
+        </a>
+        <a href="02. Slide/04_Binh_dang_gioi.pdf" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail slide 4.jpg" alt="Ảnh" />
+          <p>Bình đẳng giới</p>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ==========================
-       SECTION 4: VIDEO
-  =========================== -->
+  <!-- SECTION: VIDEO -->
   <section id="video" style="background-image: url('Link_anh/Background4.png');">
-    <div class="section-title" style="color: red;">KỂ CHUYỆN SINH ĐỘNG, TRUYỀN TẢI KIẾN THỨC</div>
-    <p class="section-description"> Video giúp chuyển hóa những khái niệm phức tạp, thuật ngữ chuyên môn thành các ví dụ gần gũi, dễ hiểu. Thông qua những khung hình sinh động và âm thanh cuốn hút, video mang đến trải nghiệm học tập hấp dẫn, giúp bài học trở nên sống động và dễ tiếp thu hơn.</p>
-        <div class="cards">
-
-<a href="https://drive.google.com/file/d/13mJXPT0PJwPCLnOh19yR0P7c61m356oW/view?usp=sharing" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail video 1.jpg" alt="Ảnh">
-    <p>Introduction</p>
-</a>            
-<a href="https://drive.google.com/file/d/1oAihei3iG17I3Q9UQGRB9Lu3El4AAEMi/view?usp=sharing" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail video 2.jpg" alt="Ảnh">
-    <p>Chúc mừng 20-11</p>
-</a> 
-<a href="https://drive.google.com/file/d/1vR3odIpXO6y1TjGASLB1OomQsplHU01z/view?usp=sharing" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail video 3.jpg" alt="Ảnh">
-    <p>TTCK Việt Nam</p>
-</a> 
-<a href="https://drive.google.com/file/d/1DS-BVvkySfYw8MlRbxbbkc7l_6Sg6HDn/view?usp=sharing" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail video 4.jpg" alt="Ảnh">
-    <p>Hệ thống rCRM</p>
-</a>             
+    <div class="section-content">
+      <div class="section-title" style="color: red;">KỂ CHUYỆN SINH ĐỘNG, <span class="mobile-break">TRUYỀN TẢI KIẾN THỨC</span>
+</div>
+      <p class="section-description">Video giúp chuyển hóa những khái niệm phức tạp, thuật ngữ chuyên môn thành các ví dụ gần gũi, dễ hiểu. Thông qua những khung hình sinh động và âm thanh cuốn hút, video mang đến trải nghiệm học tập hấp dẫn, giúp bài học trở nên sống động và dễ tiếp thu hơn.</p>
+      <div class="cards">
+        <a href="https://drive.google.com/file/d/13mJXPT0PJwPCLnOh19yR0P7c61m356oW/view?usp=sharing" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail video 1.jpg" alt="Ảnh" />
+          <p>Introduction</p>
+        </a>
+        <a href="https://drive.google.com/file/d/1oAihei3iG17I3Q9UQGRB9Lu3El4AAEMi/view?usp=sharing" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail video 2.jpg" alt="Ảnh" />
+          <p>Chúc mừng 20-11</p>
+        </a>
+        <a href="https://drive.google.com/file/d/1vR3odIpXO6y1TjGASLB1OomQsplHU01z/view?usp=sharing" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail video 3.jpg" alt="Ảnh" />
+          <p>TTCK Việt Nam</p>
+        </a>
+        <a href="https://drive.google.com/file/d/1DS-BVvkySfYw8MlRbxbbkc7l_6Sg6HDn/view?usp=sharing" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail video 4.jpg" alt="Ảnh" />
+          <p>Hệ thống rCRM</p>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ==========================
-       SECTION 5: SCORM
-  =========================== -->
+  <!-- SECTION: SCORM -->
   <section id="scorm" style="background-image: url('Link_anh/Background5.png');">
-    <div class="section-title" style="color: #003366;">TƯƠNG TÁC TRỰC TIẾP, HỌC SÂU NHỚ LÂU</div>
-    <p class="section-description"> Scorm cho phép người học chủ động tham gia vào quá trình học thông qua các bài tập, câu hỏi tương tác và phản hồi tức thì. Sự tương tác liên tục giúp người học ôn luyện, kiểm tra và củng cố kiến thức một cách vững chắc, từ đó ghi nhớ lâu và hiểu sâu hơn.</p>
-        <div class="cards">
-
-
-<a href="https://anhnd7pattern.netlify.app/" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail scorm 1.jpg" alt="Ảnh">
-    <p>7 Pattern phổ biến</p>
-</a>
-<a href="https://anhndmillionaire.netlify.app/" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail scorm 2.jpg" alt="Ảnh">
-    <p>Who is the Millionaire</p>
-</a>            
-<a href="https://anhndcanslim.netlify.app/" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail scorm 3.jpg" alt="Ảnh">
-    <p>Phương pháp CANSLIM</p>
-</a>  
-<a href="https://anhndkeotha.netlify.app/" target="_blank" class="card">
-    <img src="Link_anh/Thumbnail scorm 4.jpg" alt="Ảnh">
-    <p>PTCB + PTKT</p>
-</a> 
-            
+    <div class="section-content">
+      <div class="section-title" style="color: red;">TƯƠNG TÁC TRỰC TIẾP, <span class="mobile-break">HỌC SÂU NHỚ LÂU</span>
+</div>
+      <p class="section-description">SCORM cho phép người học chủ động tham gia vào quá trình học thông qua các bài tập, câu hỏi tương tác và phản hồi tức thì. Sự tương tác liên tục giúp người học ôn luyện, kiểm tra và củng cố kiến thức một cách vững chắc, từ đó ghi nhớ lâu và hiểu sâu hơn.</p>
+      <div class="cards">
+        <a href="https://anhnd7pattern.netlify.app/" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail scorm 1.jpg" alt="Ảnh" />
+          <p>7 Pattern phổ biến</p>
+        </a>
+        <a href="https://anhndmillionaire.netlify.app/" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail scorm 2.jpg" alt="Ảnh" />
+          <p>Who is the Millionaire</p>
+        </a>
+        <a href="https://anhndcanslim.netlify.app/" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail scorm 3.jpg" alt="Ảnh" />
+          <p>Phương pháp CANSLIM</p>
+        </a>
+        <a href="https://anhndkeotha.netlify.app/" target="_blank" class="card">
+          <img src="Link_anh/Thumbnail scorm 4.jpg" alt="Ảnh" />
+          <p>PTCB + PTKT</p>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ==========================
-       FOOTER
-  =========================== -->
-  <footer>
-    <p>Mr. Nguyễn Duy Anh</p>
-    <p>0972 173 972</p>
-    <p>anhnd.design@gmail.com</p>
-    <p><a href="https://anhnd-design.github.io/anhnd/" target="_blank">https://anhnd-design.github.io/anhnd/</a></p>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="contact-content">
+        <h3>LIÊN HỆ:</h3>
+        <p><i class="fas fa-user"></i>Mr. Nguyễn Duy Anh</p>
+        <p><i class="fas fa-phone"></i>0972 173 972</p>
+        <p><i class="fas fa-envelope"></i>anhnd.design@gmail.com</p>
+        <p><i class="fas fa-globe"></i><a href="https://anhnd-design.github.io/anhnd/" style="color: white; text-decoration: none;">https://anhnd-design.github.io/anhnd/</a></p>
+      </div>
+    </div>
   </footer>
 
-  <!-- ==========================
-       SCRIPT: HIGHLIGHT TAB
-  =========================== -->
+  <!-- SCRIPT: Highlight tab -->
   <script>
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
@@ -442,5 +176,49 @@
       });
     });
   </script>
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+<script>
+  document.onkeydown = function (e) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+      return false;
+    }
+  };
+</script>
+
+
+
+
+
+
+  
+<script>
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && e.key === 'u') {
+      e.preventDefault();
+    }
+  });
+</script>
+  
+<script>
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && (e.key === 'c' || e.key === 'a')) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+  
 </body>
 </html>
