@@ -323,25 +323,19 @@ margin-bottom: 50px;   /* Tạo khoảng cách phía dưới phần tử */}
 }
 
 
-/* Dán đoạn này xuống cuối cùng file style.css */
-
-.main-container {
-    background-image: url('Link_anh/Background2.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    width: 100%;
-    display: block; 
-    clear: both; /* Đảm bảo không bị ảnh hưởng bởi các phần tử trôi (float) */
-}
-
-.main-container section {
-    background: transparent !important;
-    min-height: auto !important; /* Quan trọng: Để nội dung không bị ép chiều cao 100vh */
-    padding: 100px 70px !important; /* Giữ khoảng cách lề trái/phải như cũ của bạn */
-    width: 100% !important;
-    display: flex !important;
+/* Gán nền chung cho cụm Section 2, 3, 4, 5 */
+#poster, #slide, #video, #scorm {
+    background-image: url('Link_anh/Background2.png') !important;
+    background-attachment: fixed !important; /* Ảnh đứng yên, nội dung trượt lên */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    
+    /* Giữ nguyên các thuộc tính hiển thị cũ của bạn */
+    display: flex;
     flex-direction: column;
-    align-items: center; /* Căn nội dung vào giữa lại */
+    width: 100%;
 }
+
+/* Đảm bảo nội dung bên trong không bị dồn lề */
+#poster { padding-top: 150px; } /* Để không bị đè bởi Navbar */
