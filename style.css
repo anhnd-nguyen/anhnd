@@ -43,10 +43,13 @@ section {
   padding: 100px 50px 60px 70px;
 }
 
-
+/* Thiết lập RIÊNG cho section Home */
 #home {
-  padding: 200px 50px 50px 70px; /* Section HOME có padding-top nhiều hơn */
+    min-height: 100vh !important; /* Ép riêng phần Home luôn cao bằng màn hình */
+    padding: 200px 50px 50px 70px; /* Giữ padding riêng như bạn đã chỉnh */
 }
+
+
 
 /* ===========================
    NAVBAR (THANH MENU)
