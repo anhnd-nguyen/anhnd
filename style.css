@@ -84,7 +84,7 @@ section {
 
 .nav-link:hover,
 .nav-link.active {
-  color: red;
+  color: #2380FC;
 }
 
 /* Responsive cho NAVBAR trên Mobile */
