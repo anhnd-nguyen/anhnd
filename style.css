@@ -216,6 +216,24 @@ margin-bottom: 50px;   /* Tạo khoảng cách phía dưới phần tử */}
   }
 }
 /* ===========================
+
+
+.main-container {
+    background-image: url('Link_anh/Background2.png');
+    background-repeat: no-repeat;
+    background-size: cover;       /* Quan trọng: Để ảnh luôn phủ kín bề ngang/dọc */
+    background-position: center;  /* Căn giữa ảnh */
+    background-attachment: fixed; /* Quan trọng: Giữ ảnh đứng yên khi cuộn nội dung */
+    width: 100%;
+    min-height: 100vh;            /* Đảm bảo chiều cao ít nhất bằng màn hình */
+}
+
+/* Quan trọng: Xóa bỏ nền của các section con để lộ nền chung ra */
+.main-container section {
+    background: transparent !important;
+    padding: 50px 0; /* Khoảng cách giữa các phần cho thoáng */
+}
+
    CARD & LƯỚI HIỂN THỊ
 =========================== */
 .cards {
