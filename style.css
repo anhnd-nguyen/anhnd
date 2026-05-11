@@ -307,11 +307,13 @@ margin-bottom: 50px;   /* Tạo khoảng cách phía dưới phần tử */}
 .contact-content h3 {
   margin: 8px 0 12px 0;
   font-size: 18px;
+  color: #BFBFBF;
 }
 
 .contact-content p {
   margin: 10px 0;
   font-size: 14px;
+  color: #BFBFBF;
 }
 
 .contact-content i {
