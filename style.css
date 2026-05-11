@@ -354,3 +354,50 @@ margin-bottom: 50px;   /* Tạo khoảng cách phía dưới phần tử */}
 
 /* Đảm bảo nội dung bên trong không bị dồn lề */
 #poster { padding-top: 150px; } /* Để không bị đè bởi Navbar */
+
+/* Hiệu ứng tuyết rơi */
+#home {
+  position: relative; /* Cần thiết để tuyết không bay ra ngoài trang chủ */
+  overflow: hidden;
+}
+
+.snowflake {
+  color: #fff;
+  font-size: 1.2em;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px rgba(255,255,255,0.8);
+  position: absolute;
+  top: -10%;
+  z-index: 1; /* Nằm dưới text nhưng trên background */
+  user-select: none;
+  cursor: default;
+  animation-name: snowflakes-fall, snowflakes-shake;
+  animation-duration: 10s, 3s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  animation-play-state: running, running;
+}
+
+/* Định vị các hạt tuyết rơi ngẫu nhiên */
+.snowflake:nth-of-type(1) { left: 10%; animation-delay: 0s, 0s; }
+.snowflake:nth-of-type(2) { left: 20%; animation-delay: 1s, 1s; }
+.snowflake:nth-of-type(3) { left: 30%; animation-delay: 6s, 0.5s; }
+.snowflake:nth-of-type(4) { left: 40%; animation-delay: 4s, 2s; }
+.snowflake:nth-of-type(5) { left: 50%; animation-delay: 2s, 1.2s; }
+.snowflake:nth-of-type(6) { left: 60%; animation-delay: 8s, 3s; }
+.snowflake:nth-of-type(7) { left: 70%; animation-delay: 6s, 2s; }
+.snowflake:nth-of-type(8) { left: 80%; animation-delay: 2.5s, 1s; }
+.snowflake:nth-of-type(9) { left: 90%; animation-delay: 1s, 0s; }
+.snowflake:nth-of-type(10) { left: 95%; animation-delay: 3s, 1.5s; }
+
+/* Hiệu ứng rơi từ trên xuống */
+@keyframes snowflakes-fall {
+  0% { top: -10%; }
+  100% { top: 100%; }
+}
+
+/* Hiệu ứng lắc lư qua lại khi rơi */
+@keyframes snowflakes-shake {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(80px); }
+}
