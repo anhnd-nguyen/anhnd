@@ -27,6 +27,12 @@ body {
 section {
   scroll-margin-top: 0px;
   min-height: 100vh;
+  #poster,
+  #slide,
+  #video,
+  #scorm {
+  background-image: url('Link_anh/Background2.png');
+}
   background-size: cover;
   background-position: center;
   color: white;
