@@ -329,3 +329,21 @@ margin-bottom: 50px;   /* Tạo khoảng cách phía dưới phần tử */}
 }
 
 
+
+
+/* Gán nền chung cho cụm Section 2, 3, 4, 5 */
+#poster, #slide, #video, #scorm {
+    background-image: url('Link_anh/Background2.png') !important;
+    background-attachment: fixed !important; /* Ảnh đứng yên, nội dung trượt lên */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    
+    /* Giữ nguyên các thuộc tính hiển thị cũ của bạn */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Đảm bảo nội dung bên trong không bị dồn lề */
+#poster { padding-top: 150px; } /* Để không bị đè bởi Navbar */
